@@ -4,37 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Conheça o cardápio artesanal e temático do Atomic Cat Café.">
-  <title>Cardápio | Atomic Cat Café</title>
+  <title>Cardápio — Atomic Cat Café</title>
+  <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- base compartilhada (variaveis, reset, header, botoes, filtros, rodape) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- estilos exclusivos desta pagina -->
   <link rel="stylesheet" href="cardapio.css">
 </head>
 <body>
-  <div class="barra-topo" aria-hidden="true"></div>
+  <!-- ============================================================= -->
+  <!--  HEADER — igual nas tres paginas (style.css + script.js)      -->
+  <!-- ============================================================= -->
+  <header class="cabecalho" id="topo">
 
-  <header class="cabecalho">
-    <div class="cabecalho-conteudo">
-      <a class="marca" href="index.html" aria-label="Atomic Cat Café - página inicial">
-        <span class="logo-recorte">
-          <img src="logo-atomic-cat.jpeg" alt="Logo do Atomic Cat Café">
-        </span>
-        <span class="marca-texto">
-          <small>アトミック猫カフェ</small>
-          <strong>Atomic Cat Café</strong>
+    <!-- faixinha decorativa do topo -->
+    <div class="cabecalho__faixa" aria-hidden="true"></div>
+
+    <div class="cabecalho__container">
+
+      <!-- logo -->
+      <a href="index.html" class="logo">
+        <img src="img/logo.png.jpeg" alt="Logotipo do Atomic Cat Café" class="logo__img">
+        <span class="logo__texto">
+          <span class="logo__jp">アトミック猫カフェ</span>
+          <span class="logo__nome">Atomic Cat Café</span>
         </span>
       </a>
 
-      <button class="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navegacao">
+      <!-- botão do menu (aparece só no celular) -->
+      <button class="hamburguer" id="btnMenu" type="button"
+              aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="navegacao" id="navegacao" aria-label="Navegação principal">
-        <a href="index.html">Início</a>
-        <a href="index.html#sobre">Sobre nós</a>
-        <a class="ativo" href="cardapio.html" aria-current="page">Cardápio</a>
-        <a href="index.html#gatos">Nossos gatos</a>
-        <a href="index.html#contato">Contato</a>
+      <!-- navegação -->
+      <nav class="nav" id="menu" aria-label="Menu principal">
+        <ul class="nav__lista">
+          <li><a href="index.html#inicio" class="nav__link">Início</a></li>
+          <li><a href="index.html#sobre" class="nav__link">Sobre nós</a></li>
+          <li><a href="cardapio.html" class="nav__link nav__link--ativo" aria-current="page">Cardápio</a></li>
+          <li><a href="gatos.html" class="nav__link">Nossos gatos</a></li>
+          <li><a href="#contato" class="nav__link">Contato</a></li>
+        </ul>
       </nav>
 
     </div>
@@ -42,7 +57,7 @@
 
   <main>
     <section class="secao-cardapio" aria-labelledby="titulo-produtos">
-      <div class="largura-site">
+      <div class="container">
         <div class="cabecalho-secao">
           <div>
             <span class="sobretitulo">Escolha seu favorito</span>
@@ -58,7 +73,7 @@
         </div>
 
         <div class="filtros" role="group" aria-label="Filtrar produtos por categoria">
-          <button class="filtro ativo" type="button" data-categoria="todos">Todos</button>
+          <button class="filtro filtro--ativo" type="button" data-categoria="todos">Todos</button>
           <button class="filtro" type="button" data-categoria="cafes">☕ Cafés</button>
           <button class="filtro" type="button" data-categoria="geladas">🧋 Bebidas geladas</button>
           <button class="filtro" type="button" data-categoria="doces">🍰 Doces</button>
@@ -208,7 +223,7 @@
     </section>
 
     <section class="destaque-combo" aria-labelledby="titulo-combo">
-      <div class="largura-site combo-conteudo">
+      <div class="container combo-conteudo">
         <div class="combo-imagem produto-9" role="img" aria-label="Combo Atomic Neko completo">
           <span class="selo-combo">SAVE<br>20%</span>
         </div>
@@ -230,23 +245,46 @@
     </section>
   </main>
 
-  <footer class="rodape-site">
-    <div class="largura-site rodape-conteudo">
-      <div class="marca marca-rodape">
-        <span class="logo-recorte"><img src="logo-atomic-cat.jpeg" alt="Logo do Atomic Cat Café"></span>
-        <span class="marca-texto"><small>アトミック猫カフェ</small><strong>Atomic Cat Café</strong></span>
-      </div>
-      <p>Café artesanal, doces fofos e muito amor por gatos resgatados. ♡</p>
-      <div class="links-rodape">
-        <a href="index.html">Início</a>
-        <a href="cardapio.html">Cardápio</a>
-        <a href="index.html#contato">Contato</a>
-      </div>
+  <!-- ============================================================= -->
+  <!--  RODAPÉ — igual nas tres paginas; leva o id="contato"         -->
+  <!-- ============================================================= -->
+  <footer class="rodape" id="contato">
+    <div class="rodape__container">
+
+      <a href="index.html" class="logo">
+        <img src="img/logo.png.jpeg" alt="Logotipo do Atomic Cat Café" class="logo__img">
+        <span class="logo__texto">
+          <span class="logo__jp">アトミック猫カフェ</span>
+          <span class="logo__nome">Atomic Cat Café</span>
+        </span>
+      </a>
+
+      <p class="rodape__texto">
+        Café artesanal, doces fofos e muito amor por gatos resgatados. ♡
+      </p>
+
+      <nav class="rodape__links" aria-label="Links do rodapé">
+        <a href="index.html" class="rodape__link">Início</a>
+        <a href="cardapio.html" class="rodape__link">Cardápio</a>
+        <a href="gatos.html" class="rodape__link">Nossos gatos</a>
+      </nav>
+
     </div>
-    <div class="rodape-final">© 2026 Atomic Cat Café • Feito com carinho e patinhas 🐾</div>
+
+    <address class="rodape__contato">
+      <span><strong>Endereço:</strong> Rua dos Felinos, 62 — Centro</span>
+      <span><strong>Telefone:</strong> (51) 3000-0062</span>
+      <span><strong>Horário:</strong> terça a domingo, das 10h às 20h</span>
+      <span><strong>E-mail:</strong> oi@atomiccatcafe.com.br</span>
+    </address>
+
+    <p class="rodape__final">© 2026 Atomic Cat Café • Feito com carinho e patinhas 🐾</p>
   </footer>
 
   <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+  <!-- menu do header (compartilhado) -->
+  <script src="script.js"></script>
+  <!-- interacoes desta pagina -->
   <script src="cardapio.js"></script>
 </body>
 </html>

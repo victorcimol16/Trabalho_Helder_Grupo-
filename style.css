@@ -5,8 +5,13 @@
      0. Variáveis e reset ............ Cassio
      1. Header / menu ................ Cassio   <-- camada 1
      2. Main / hero .................. Cassio   <-- camada 2
-     3. Sobre nós ..................... Cassio   <-- camada 3
-     4. Seções dos colegas ........... (colar no final)
+     3. Sobre nós .................... Cassio   <-- camada 3
+     4. Filtros (compartilhado) ...... Victor
+     5. Rodapé (compartilhado) ....... Victor
+   -------------------------------------------------------------------
+   Este arquivo e a BASE de todas as paginas: variaveis, reset, header,
+   botoes, filtros e rodape. Cada pagina carrega style.css primeiro e
+   depois o seu proprio css (gatos.css, cardapio.css).
    =================================================================== */
 
 
@@ -39,9 +44,17 @@
   --largura:      1140px;
   --raio:         999px;
   --sombra-rosa:  0 8px 24px rgba(255, 138, 192, .28);
+  --sombra:       0 14px 34px rgba(22, 41, 75, .08);
+  --borda:        #F3D9E3;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* largura padrao de conteudo, usada pelas secoes das paginas internas */
+.container {
+  width: min(100% - 40px, var(--largura));
+  margin-inline: auto;
+}
 
 html { scroll-behavior: smooth; }
 
@@ -57,6 +70,24 @@ img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 
 ul { list-style: none; }
+
+/* foco visivel padrao em toda a navegacao por teclado */
+:focus-visible {
+  outline: 3px solid rgba(81, 204, 193, .55);
+  outline-offset: 3px;
+}
+
+/* respeita quem pediu menos animacao no sistema */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
 
 
 /* ===================================================================
@@ -688,4 +719,133 @@ ul { list-style: none; }
 
 @media (max-width: 420px) {
   .sobre { padding: 24px 16px 72px; }
+}
+
+
+/* ===================================================================
+   4. FILTROS (componente compartilhado)
+   -------------------------------------------------------------------
+   Usado pela pagina "Nossos gatos" e pela pagina "Cardapio".
+   Antes cada pagina tinha a sua propria versao, com nomes diferentes
+   (.filtro--ativo x .filtro.ativo). Agora e um componente so.
+   =================================================================== */
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.filtro {
+  padding: 10px 22px;
+  border-radius: var(--raio);
+  border: 2px solid var(--rosa-claro);
+  background: var(--branco);
+  font-family: inherit;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  cursor: pointer;
+  transition: background .25s ease, border-color .25s ease, color .25s ease, transform .25s ease;
+}
+
+.filtro:hover {
+  border-color: var(--rosa);
+  color: var(--rosa-escuro);
+  transform: translateY(-2px);
+}
+
+.filtro--ativo {
+  background: var(--rosa);
+  border-color: var(--rosa);
+  color: var(--branco);
+  box-shadow: var(--sombra-rosa);
+}
+
+
+/* ===================================================================
+   5. RODAPE (compartilhado pelas tres paginas)
+   -------------------------------------------------------------------
+   Leva o id="contato" no HTML: e para ca que aponta o link "Contato"
+   do menu, em qualquer pagina.
+   =================================================================== */
+
+.rodape {
+  border-top: 2px solid var(--rosa-claro);
+  background: var(--branco);
+}
+
+.rodape__container {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 44px 24px 32px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 28px;
+}
+
+.rodape__texto {
+  font-size: .95rem;
+  color: var(--texto-suave);
+}
+
+.rodape__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.rodape__link {
+  font-size: .92rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  transition: color .25s ease;
+}
+
+.rodape__link:hover { color: var(--rosa-escuro); }
+
+.rodape__contato {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0 24px 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 32px;
+  font-size: .9rem;
+  color: var(--texto-suave);
+}
+
+.rodape__contato strong {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.rodape__final {
+  padding: 16px 24px;
+  border-top: 1px solid var(--rosa-nevoa);
+  background: var(--rosa-nevoa);
+  text-align: center;
+  font-size: .85rem;
+  color: var(--texto-suave);
+}
+
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 920px) {
+  .rodape__container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .rodape__links { justify-content: center; }
+  .rodape__contato { justify-content: center; text-align: center; }
+}
+
+@media (max-width: 420px) {
+  .rodape__container { padding: 32px 16px 24px; }
+  .rodape__contato { padding: 0 16px 24px; }
 }

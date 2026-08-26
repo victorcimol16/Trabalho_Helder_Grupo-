@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -17,6 +16,9 @@
 <body>
 
   
+  <!-- ============================================================= -->
+  <!--  HEADER — igual nas tres paginas (style.css + script.js)      -->
+  <!-- ============================================================= -->
   <header class="cabecalho" id="topo">
 
     <!-- faixinha decorativa do topo -->
@@ -42,11 +44,11 @@
       <!-- navegação -->
       <nav class="nav" id="menu" aria-label="Menu principal">
         <ul class="nav__lista">
-          <li><a href="#inicio"   class="nav__link nav__link--ativo">Início</a></li>
-          <li><a href="#sobre"    class="nav__link">Sobre nós</a></li>
+          <li><a href="#inicio" class="nav__link nav__link--ativo" aria-current="page">Início</a></li>
+          <li><a href="#sobre" class="nav__link">Sobre nós</a></li>
           <li><a href="cardapio.html" class="nav__link">Cardápio</a></li>
-          <li><a href="gatos.html"    class="nav__link">Nossos gatos</a></li>
-          <li><a href="#contato"  class="nav__link">Contato</a></li>
+          <li><a href="gatos.html" class="nav__link">Nossos gatos</a></li>
+          <li><a href="#contato" class="nav__link">Contato</a></li>
         </ul>
       </nav>
 
@@ -155,6 +157,42 @@
       </div>
     </section>
   </main>
+
+  <!-- ============================================================= -->
+  <!--  RODAPÉ — igual nas tres paginas; leva o id="contato"         -->
+  <!-- ============================================================= -->
+  <footer class="rodape" id="contato">
+    <div class="rodape__container">
+
+      <a href="index.html" class="logo">
+        <img src="img/logo.png.jpeg" alt="Logotipo do Atomic Cat Café" class="logo__img">
+        <span class="logo__texto">
+          <span class="logo__jp">アトミック猫カフェ</span>
+          <span class="logo__nome">Atomic Cat Café</span>
+        </span>
+      </a>
+
+      <p class="rodape__texto">
+        Café artesanal, doces fofos e muito amor por gatos resgatados. ♡
+      </p>
+
+      <nav class="rodape__links" aria-label="Links do rodapé">
+        <a href="index.html" class="rodape__link">Início</a>
+        <a href="cardapio.html" class="rodape__link">Cardápio</a>
+        <a href="gatos.html" class="rodape__link">Nossos gatos</a>
+      </nav>
+
+    </div>
+
+    <address class="rodape__contato">
+      <span><strong>Endereço:</strong> Rua dos Felinos, 62 — Centro</span>
+      <span><strong>Telefone:</strong> (51) 3000-0062</span>
+      <span><strong>Horário:</strong> terça a domingo, das 10h às 20h</span>
+      <span><strong>E-mail:</strong> oi@atomiccatcafe.com.br</span>
+    </address>
+
+    <p class="rodape__final">© 2026 Atomic Cat Café • Feito com carinho e patinhas 🐾</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

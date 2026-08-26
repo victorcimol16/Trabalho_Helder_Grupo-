@@ -18,18 +18,40 @@ Para rodar este projeto localmente na sua máquina, abra o seu terminal (como o 
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/victorcimol16/cafe-gatos-fofos.git
+   git clone https://github.com/victorcimol16/Trabalho_Helder_Grupo-.git
    ```
 2. Navegue até a pasta do projeto:
    ```bash
-   cd cafe-gatos-fofos
+   cd Trabalho_Helder_Grupo-
    ```
 3. Abra o arquivo principal no navegador:
    Dê um duplo clique no arquivo `index.html` ou abra-o diretamente no seu navegador de preferência.
 
 ## 📂 Estrutura do Projeto
 
-A arquitetura do projeto foi pensada para evitar o aninhamento excessivo de diretórios, facilitando a navegação, commits e possíveis resoluções de conflitos (merge conflicts). Todo o esqueleto HTML segue as diretrizes de documentações técnicas de referência.
+O site tem **uma base compartilhada** e, para cada página, um par de arquivos próprios.
+Essa divisão evita conflitos de merge: cada pessoa mexe no CSS/JS da sua página.
+
+```
+index.html      style.css  +  script.js                  (home: hero + sobre nós)
+cardapio.html   style.css  +  cardapio.css | script.js + cardapio.js
+gatos.html      style.css  +  gatos.css    | script.js + gatos.js
+img/            todas as imagens do site
+```
+
+**Base compartilhada — mexa aqui só quando for algo de todas as páginas:**
+
+* `style.css` — variáveis de cor (`--rosa`, `--navy`, `--turquesa`…), reset, header,
+  botões (`.botao`), filtros (`.filtro`) e rodapé (`.rodape`).
+* `script.js` — abre e fecha o menu no celular.
+
+**Regras que o time combinou:**
+
+1. Toda página carrega `style.css` **antes** do seu CSS próprio, e `script.js` **antes** do seu JS próprio.
+2. Cores, sombras e medidas sempre pelas variáveis do `style.css` — nada de `#ff8ac0` solto nem de um `:root` novo em cada arquivo.
+3. Header e rodapé são iguais nas três páginas (o rodapé leva `id="contato"`, que é para onde aponta o link Contato do menu).
+4. Classes no padrão BEM: `bloco__elemento--modificador` (ex.: `nav__link--ativo`, `filtro--ativo`).
+5. Imagens sempre dentro de `img/`.
 
 ## 🤝 Como Contribuir
 
