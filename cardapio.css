@@ -57,8 +57,7 @@ img {
 }
 
 .largura-site,
-.cabecalho-conteudo,
-.apresentacao-conteudo {
+.cabecalho-conteudo {
   width: min(calc(100% - 40px), var(--largura));
   margin-inline: auto;
 }
@@ -75,7 +74,7 @@ img {
 .cabecalho-conteudo {
   min-height: 86px;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   align-items: center;
   gap: 30px;
 }
@@ -194,13 +193,6 @@ img {
   transform: translateY(-2px);
 }
 
-.botao-reserva {
-  min-width: 170px;
-  padding: 0 25px;
-  box-shadow: var(--sombra-rosa);
-  font-size: 14px;
-}
-
 .botao-menu {
   display: none;
   width: 44px;
@@ -221,45 +213,6 @@ img {
   transition: transform 180ms ease, opacity 180ms ease;
 }
 
-.apresentacao {
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(255, 199, 217, 0.6);
-  background:
-    radial-gradient(circle at 12% 25%, rgba(255, 199, 217, 0.28), transparent 20%),
-    radial-gradient(circle at 88% 25%, rgba(81, 204, 193, 0.13), transparent 18%),
-    var(--creme);
-}
-
-.apresentacao::before,
-.apresentacao::after {
-  position: absolute;
-  color: rgba(255, 138, 192, 0.16);
-  font-size: 28px;
-  content: "✦";
-}
-
-.apresentacao::before {
-  top: 54px;
-  left: 7%;
-}
-
-.apresentacao::after {
-  right: 6%;
-  bottom: 45px;
-  content: "♡";
-}
-
-.apresentacao-conteudo {
-  display: grid;
-  min-height: 420px;
-  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
-  align-items: center;
-  gap: 80px;
-  padding-block: 65px;
-}
-
-.selo-intro,
 .sobretitulo {
   display: inline-flex;
   align-items: center;
@@ -267,116 +220,6 @@ img {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.02em;
-}
-
-.selo-intro {
-  padding: 8px 15px;
-  border-radius: 999px;
-  background: var(--rosa-suave);
-}
-
-.apresentacao h1 {
-  margin: 18px 0 16px;
-  color: var(--azul);
-  font-size: clamp(40px, 5vw, 62px);
-  line-height: 1.07;
-  letter-spacing: -0.04em;
-}
-
-.apresentacao h1 em {
-  color: var(--rosa);
-  font-style: normal;
-}
-
-.apresentacao-texto > p {
-  max-width: 660px;
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.detalhes-intro {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-  margin-top: 28px;
-  color: #605b6a;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.emblema-cardapio {
-  position: relative;
-  width: 270px;
-  height: 270px;
-  margin: auto;
-}
-
-.orbita {
-  position: absolute;
-  inset: 14px;
-  border: 2px dashed var(--verde-lima);
-  border-radius: 50%;
-  animation: girar 22s linear infinite;
-}
-
-.orbita-dois {
-  inset: 37px;
-  border-color: var(--verde-azulado);
-  animation-direction: reverse;
-  animation-duration: 17s;
-}
-
-.nucleo {
-  position: absolute;
-  inset: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border: 10px solid rgba(255, 199, 217, 0.48);
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 18px 38px rgba(255, 138, 192, 0.16);
-  color: var(--azul);
-  text-align: center;
-}
-
-.nucleo > span {
-  font-size: 42px;
-  line-height: 1;
-}
-
-.nucleo strong {
-  margin-top: 8px;
-  color: var(--rosa-forte);
-  font-size: 14px;
-}
-
-.nucleo small {
-  font-size: 9px;
-  font-weight: 600;
-}
-
-.estrela {
-  position: absolute;
-  color: var(--rosa);
-  font-size: 25px;
-}
-
-.estrela-um {
-  top: 5px;
-  right: 38px;
-}
-
-.estrela-dois {
-  bottom: 14px;
-  left: 38px;
-  color: var(--verde-azulado);
-}
-
-@keyframes girar {
-  to { transform: rotate(360deg); }
 }
 
 .secao-cardapio {
@@ -823,12 +666,6 @@ img {
     font-size: 12px;
   }
 
-  .botao-reserva {
-    min-width: 145px;
-    padding-inline: 18px;
-    font-size: 12px;
-  }
-
   .grade-produtos {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -909,30 +746,6 @@ img {
     width: 46px;
   }
 
-  .botao-reserva {
-    display: none;
-  }
-
-  .apresentacao-conteudo {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding-block: 58px;
-    text-align: center;
-  }
-
-  .apresentacao-texto > p {
-    margin-inline: auto;
-  }
-
-  .detalhes-intro {
-    justify-content: center;
-  }
-
-  .emblema-cardapio {
-    width: 235px;
-    height: 235px;
-  }
-
   .combo-conteudo {
     grid-template-columns: 1fr;
   }
@@ -951,8 +764,7 @@ img {
 
 @media (max-width: 620px) {
   .largura-site,
-  .cabecalho-conteudo,
-  .apresentacao-conteudo {
+  .cabecalho-conteudo {
     width: min(calc(100% - 28px), var(--largura));
   }
 
@@ -962,28 +774,6 @@ img {
 
   .marca-texto strong {
     font-size: 14px;
-  }
-
-  .apresentacao-conteudo {
-    min-height: auto;
-    padding-block: 48px 54px;
-  }
-
-  .apresentacao h1 {
-    font-size: clamp(36px, 11vw, 49px);
-  }
-
-  .apresentacao-texto > p {
-    font-size: 14px;
-  }
-
-  .detalhes-intro {
-    gap: 9px 15px;
-    font-size: 11px;
-  }
-
-  .emblema-cardapio {
-    display: none;
   }
 
   .secao-cardapio {
