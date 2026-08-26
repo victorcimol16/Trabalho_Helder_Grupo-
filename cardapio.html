@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça o cardápio artesanal e temático do Atomic Cat Café.">
+  <title>Cardápio | Atomic Cat Café</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cardapio.css">
+</head>
+<body>
+  <div class="barra-topo" aria-hidden="true"></div>
+
+  <header class="cabecalho">
+    <div class="cabecalho-conteudo">
+      <a class="marca" href="index.html" aria-label="Atomic Cat Café - página inicial">
+        <span class="logo-recorte">
+          <img src="assets/logo-atomic-cat.jpeg" alt="Logo do Atomic Cat Café">
+        </span>
+        <span class="marca-texto">
+          <small>アトミック猫カフェ</small>
+          <strong>Atomic Cat Café</strong>
+        </span>
+      </a>
+
+      <button class="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navegacao">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="navegacao" id="navegacao" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="index.html#sobre">Sobre nós</a>
+        <a class="ativo" href="cardapio.html" aria-current="page">Cardápio</a>
+        <a href="index.html#gatos">Nossos gatos</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+
+      <a class="botao botao-reserva" href="index.html#reservas">Reservar mesa</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="apresentacao" aria-labelledby="titulo-cardapio">
+      <div class="apresentacao-conteudo">
+        <div class="apresentacao-texto">
+          <span class="selo-intro">✿ Feito à mão • 毎日</span>
+          <h1 id="titulo-cardapio">Delícias que fazem<br>o coração <em>ronronar</em></h1>
+          <p>Nossos cafés, doces e pratos são preparados artesanalmente, com ingredientes selecionados e uma dose extra de carinho.</p>
+          <div class="detalhes-intro" aria-label="Diferenciais do cardápio">
+            <span>☕ Café artesanal</span>
+            <span>🍰 Doces fresquinhos</span>
+            <span>🐾 Opções temáticas</span>
+          </div>
+        </div>
+        <div class="emblema-cardapio" aria-hidden="true">
+          <div class="orbita orbita-um"></div>
+          <div class="orbita orbita-dois"></div>
+          <div class="nucleo">
+            <span>☕</span>
+            <strong>おいしい!</strong>
+            <small>feito com carinho</small>
+          </div>
+          <span class="estrela estrela-um">✦</span>
+          <span class="estrela estrela-dois">♡</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao-cardapio" aria-labelledby="titulo-produtos">
+      <div class="largura-site">
+        <div class="cabecalho-secao">
+          <div>
+            <span class="sobretitulo">Escolha seu favorito</span>
+            <h2 id="titulo-produtos">Nosso cardápio</h2>
+          </div>
+          <div class="contador-pedido" aria-live="polite">
+            <span aria-hidden="true">🛍️</span>
+            <div>
+              <small>Seu pedido</small>
+              <strong><span id="quantidade-itens">0</span> <span id="rotulo-itens">itens</span></strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="filtros" role="group" aria-label="Filtrar produtos por categoria">
+          <button class="filtro ativo" type="button" data-categoria="todos">Todos</button>
+          <button class="filtro" type="button" data-categoria="cafes">☕ Cafés</button>
+          <button class="filtro" type="button" data-categoria="geladas">🧋 Bebidas geladas</button>
+          <button class="filtro" type="button" data-categoria="doces">🍰 Doces</button>
+          <button class="filtro" type="button" data-categoria="refeicoes">🍱 Refeições</button>
+          <button class="filtro" type="button" data-categoria="especiais">⚛ Especiais da casa</button>
+        </div>
+
+        <p class="resultado-filtro" id="resultado-filtro" aria-live="polite">9 delícias esperando por você</p>
+
+        <div class="grade-produtos" id="grade-produtos">
+          <article class="card-produto" data-categoria="cafes">
+            <div class="imagem-produto produto-1" role="img" aria-label="Neko Latte com arte de gatinho">
+              <span class="etiqueta etiqueta-rosa">Mais pedido</span>
+            </div>
+            <div class="conteudo-produto">
+              <span class="categoria-produto">Cafés</span>
+              <h3>Neko Latte</h3>
+              <p>Espresso cremoso com leite vaporizado e uma fofíssima latte art de gatinho.</p>
+              <div class="rodape-produto">
+                <strong class="preco">R$ 16,90</strong>
+                <button class="adicionar" type="button" data-produto="Neko Latte"><span>＋</span> Adicionar ao pedido</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-produto" data-categoria="doces">
+            <div class="imagem-produto produto-2" role="img" aria-label="Fatia de cheesecake de sakura">
+              <span class="etiqueta etiqueta-verde">Novo</span>
+            </div>
+            <div class="conteudo-produto">
+              <span class="categoria-produto">Doces</span>
+              <h3>Sakura Cheesecake</h3>
+              <p>Cheesecake leve de baunilha com calda de morango e delicadas flores de sakura.</p>
+              <div class="rodape-produto">
+                <strong class="preco">R$ 18,50</strong>
+                <button class="adicionar" type="button" data-produto="Sakura Cheesecake"><span>＋</span> Adicionar ao pedido</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-produto" data-categoria="geladas">
+            <div class="imagem-produto produto-3" role="img" aria-label="Atomic Matcha gelado">
+              <span class="etiqueta etiqueta-lima">Energia kawaii</span>
+            </div>
+            <div class="conteudo-produto">
+              <span class="categoria-produto">Bebidas geladas</span>
+              <h3>Atomic Matcha</h3>
+              <p>Matcha gelado, leite e espuma de baunilha em uma mistura verde simplesmente explosiva.</p>
+              <div class="rodape-produto">
+                <strong class="preco">R$ 17,90</strong>
+                <button class="adicionar" type="button" data-produto="Atomic Matcha"><span>＋</span> Adicionar ao pedido</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-produto" data-categoria="refeicoes">
+            <div class="imagem-produto produto-4" role="img" aria-label="Maid Omurice decorado como gatinho">
+              <span class="etiqueta etiqueta-rosa">Especial da Maid</span>
+            </div>
+            <div class="conteudo-produto">
+              <span class="categoria-produto">Refeições</span>
+              <h3>Maid Omurice</h3>
+              <p>Arroz temperado envolto em omelete macio, finalizado com um desenho surpresa em ketchup.</p>
+              <div class="rodape-produto">
+                <strong class="preco">R$ 29,90</strong>
+                <button class="adicionar" type="button" data-produto="Maid Omurice"><span>＋</span> Adicionar ao pedido</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-produto" data-categoria="doces">
+            <div class="imagem-produto produto-5" role="img" aria-label="Mochis coloridos">
+              <span class="etiqueta etiqueta-dourada">3 sabores</span>
+            </div>
+            <div class="conteudo-produto">
+              <span class="categoria-produto">Doces</span>
+              <h3>Mochi Explosion</h3>
+              <p>Trio de mochis macios nos sabores morango, matcha e chocolate. Pequenos e irresistíveis!</p>
+              <div class="rodape-produto">
+                <strong class="preco">R$ 15,90</strong>
+                <button class="adicionar" type="button" data-produto="Mochi Explosion"><span>＋</span> Adicionar ao pedido</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-produto" data-categoria="cafes">
+            <div class="imagem-produto produto-6" role="img" aria-label="Catpuccino com espuma de gato">
+              <span class="etiqueta etiqueta-verde">Fofo demais</span>
+            </div>
+            <div class="conteudo-produto">
+              <span class="categoria-produto">Cafés</span>
+              <h3>Catpuccino</h3>
+              <p>Cappuccino clássico, espuma aveludada e orelhinhas de marshmallow para completar o neko mood.</p>
+              <div class="rodape-produto">
+                <strong class="preco">R$ 15,50</strong>
+                <button class="adicionar" type="button" data-produto="Catpuccino"><span>＋</span> Adicionar ao pedido</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-produto" data-categoria="doces">
+            <div class="imagem-produto produto-7" role="img" aria-label="Brownie de chocolate com estrelas rosas">
+              <span class="etiqueta etiqueta-dourada">Intenso</span>
+            </div>
+            <div class="conteudo-produto">
+              <span class="categoria-produto">Doces</span>
+              <h3>Brownie Nuclear</h3>
+              <p>Chocolate intenso, centro úmido e estrelinhas crocantes. Uma reação em cadeia de sabor.</p>
+              <div class="rodape-produto">
+                <strong class="preco">R$ 14,90</strong>
+                <button class="adicionar" type="button" data-produto="Brownie Nuclear"><span>＋</span> Adicionar ao pedido</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-produto" data-categoria="geladas">
+            <div class="imagem-produto produto-8" role="img" aria-label="Bubble tea rosa e verde-azulado">
+              <span class="etiqueta etiqueta-rosa">Mais pedido</span>
+            </div>
+            <div class="conteudo-produto">
+              <span class="categoria-produto">Bebidas geladas</span>
+              <h3>Bubble Tea Kawaii</h3>
+              <p>Chá gelado de morango com leite, pérolas de tapioca e uma nuvem de creme bem fofinha.</p>
+              <div class="rodape-produto">
+                <strong class="preco">R$ 19,90</strong>
+                <button class="adicionar" type="button" data-produto="Bubble Tea Kawaii"><span>＋</span> Adicionar ao pedido</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-produto card-combo" data-categoria="especiais">
+            <div class="imagem-produto produto-9" role="img" aria-label="Combo Atomic Neko com bebida e doces">
+              <span class="etiqueta etiqueta-azul">Especial da casa</span>
+            </div>
+            <div class="conteudo-produto">
+              <span class="categoria-produto">Especiais da casa</span>
+              <h3>Combo Atomic Neko</h3>
+              <p>Um mini Neko Latte, dois mochis e uma fatia de Sakura Cheesecake para compartilhar — ou não!</p>
+              <div class="rodape-produto">
+                <strong class="preco">R$ 39,90</strong>
+                <button class="adicionar" type="button" data-produto="Combo Atomic Neko"><span>＋</span> Adicionar ao pedido</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="destaque-combo" aria-labelledby="titulo-combo">
+      <div class="largura-site combo-conteudo">
+        <div class="combo-imagem produto-9" role="img" aria-label="Combo Atomic Neko completo">
+          <span class="selo-combo">SAVE<br>20%</span>
+        </div>
+        <div class="combo-texto">
+          <span class="sobretitulo">⚛ Reação deliciosa garantida</span>
+          <h2 id="titulo-combo">Combo Atomic Neko</h2>
+          <p>A experiência completa do café em um único pedido: bebida cremosa, mochis macios e nosso cheesecake mais amado.</p>
+          <ul>
+            <li>✓ 1 mini Neko Latte</li>
+            <li>✓ 2 Mochis artesanais</li>
+            <li>✓ 1 Sakura Cheesecake</li>
+          </ul>
+          <div class="acao-combo">
+            <div class="preco-combo"><small>combo completo</small><strong>R$ 39,90</strong></div>
+            <button class="botao adicionar" type="button" data-produto="Combo Atomic Neko"><span>＋</span> Adicionar ao pedido</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape-site">
+    <div class="largura-site rodape-conteudo">
+      <div class="marca marca-rodape">
+        <span class="logo-recorte"><img src="assets/logo-atomic-cat.jpeg" alt="Logo do Atomic Cat Café"></span>
+        <span class="marca-texto"><small>アトミック猫カフェ</small><strong>Atomic Cat Café</strong></span>
+      </div>
+      <p>Café artesanal, doces fofos e muito amor por gatos resgatados. ♡</p>
+      <div class="links-rodape">
+        <a href="index.html">Início</a>
+        <a href="cardapio.html">Cardápio</a>
+        <a href="index.html#contato">Contato</a>
+      </div>
+    </div>
+    <div class="rodape-final">© 2026 Atomic Cat Café • Feito com carinho e patinhas 🐾</div>
+  </footer>
+
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+  <script src="cardapio.js"></script>
+</body>
+</html>
