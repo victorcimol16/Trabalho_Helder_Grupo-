@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossos gatos — Atomic Cat Café</title>
+  <meta name="description" content="Conheça os gatos do Atomic Cat Café: moradores fixos e felinos resgatados disponíveis para adoção.">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================= -->
+  <!--  HEADER — mesmo da página inicial                             -->
+  <!-- ============================================================= -->
+  <header class="cabecalho" id="topo">
+
+    <!-- faixinha decorativa do topo -->
+    <div class="cabecalho__faixa" aria-hidden="true"></div>
+
+    <div class="cabecalho__container">
+
+      <!-- logo -->
+      <a href="index.html" class="logo">
+        <img src="img/logo.png.jpeg" alt="Logotipo do Atomic Cat Café" class="logo__img">
+        <span class="logo__texto">
+          <span class="logo__jp">アトミック猫カフェ</span>
+          <span class="logo__nome">Atomic Cat Café</span>
+        </span>
+      </a>
+
+      <!-- botão do menu (aparece só no celular) -->
+      <button class="hamburguer" id="btnMenu" type="button"
+              aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- navegação -->
+      <nav class="nav" id="menu" aria-label="Menu principal">
+        <ul class="nav__lista">
+          <li><a href="index.html#inicio"   class="nav__link">Início</a></li>
+          <li><a href="index.html#sobre"    class="nav__link">Sobre nós</a></li>
+          <li><a href="index.html#cardapio" class="nav__link">Cardápio</a></li>
+          <li><a href="gatos.html"          class="nav__link nav__link--ativo" aria-current="page">Nossos gatos</a></li>
+          <li><a href="index.html#contato"  class="nav__link">Contato</a></li>
+          <li><a href="index.html#contato"  class="nav__botao">Reservar mesa</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ============================================================= -->
+  <!--  CAMADA 3 — NOSSOS GATOS — Victor                             -->
+  <!-- ============================================================= -->
+  <main>
+    <section id="gatos" class="gatos">
+      <div class="gatos__container">
+
+        <div class="gatos__cabecalho">
+          <span class="gatos__etiqueta">🐾 Moradores do café</span>
+
+          <h1 class="gatos__titulo">
+            Nossos <span class="gatos__titulo--destaque">gatos</span>
+          </h1>
+
+          <p class="gatos__subtitulo">
+            Todos os nossos felinos foram resgatados e vivem em órbita própria
+            pelo salão. Alguns já escolheram o café como lar definitivo; outros
+            estão à procura de uma família. Venha tomar um café e deixe que eles
+            decidam quem adota quem.
+          </p>
+        </div>
+
+        <!-- filtros -->
+        <div class="gatos__filtros" role="group" aria-label="Filtrar gatos">
+          <button type="button" class="filtro filtro--ativo" data-filtro="todos"   aria-pressed="true">Todos</button>
+          <button type="button" class="filtro"               data-filtro="adocao"  aria-pressed="false">Para adoção</button>
+          <button type="button" class="filtro"               data-filtro="morador" aria-pressed="false">Moradores fixos</button>
+        </div>
+
+        <!-- grade de gatinhos -->
+        <div class="gatos__grade">
+
+          <!-- Para usar fotos reais, troque a div .gato__avatar por:
+               <img src="img/gato-sputnik.jpg" alt="Gato Sputnik" class="gato__avatar"> -->
+
+          <article class="gato" data-status="morador">
+            <div class="gato__figura">
+              <span class="gato__anel" aria-hidden="true"></span>
+              <span class="gato__anel gato__anel--interno" aria-hidden="true"></span>
+              <div class="gato__avatar" role="img" aria-label="Ilustração do gato Sputnik">🐈‍⬛</div>
+            </div>
+            <span class="gato__selo gato__selo--morador">Morador fixo</span>
+            <h2 class="gato__nome">
+              <span class="gato__jp">スプートニク</span>
+              Sputnik
+            </h2>
+            <p class="gato__meta">Preto • 4 anos • Macho</p>
+            <p class="gato__texto">
+              Chefe não oficial do salão. Inspeciona cada mesa antes do café ser
+              servido e só aprova o pedido depois de um ronronado.
+            </p>
+            <ul class="gato__tags">
+              <li class="gato__tag">Curioso</li>
+              <li class="gato__tag">Colo</li>
+              <li class="gato__tag">Dorminhoco</li>
+            </ul>
+          </article>
+
+          <article class="gato" data-status="adocao">
+            <div class="gato__figura">
+              <span class="gato__anel" aria-hidden="true"></span>
+              <span class="gato__anel gato__anel--interno" aria-hidden="true"></span>
+              <div class="gato__avatar" role="img" aria-label="Ilustração da gata Mochi">🐱</div>
+            </div>
+            <span class="gato__selo gato__selo--adocao">Para adoção</span>
+            <h2 class="gato__nome">
+              <span class="gato__jp">もち</span>
+              Mochi
+            </h2>
+            <p class="gato__meta">Creme • 2 anos • Fêmea</p>
+            <p class="gato__texto">
+              Fofa como o doce que dá nome a ela. Adora dormir em cima dos
+              guardanapos limpos e cumprimentar quem entra pela porta.
+            </p>
+            <ul class="gato__tags">
+              <li class="gato__tag">Brincalhona</li>
+              <li class="gato__tag">Sociável</li>
+            </ul>
+          </article>
+
+          <article class="gato" data-status="morador">
+            <div class="gato__figura">
+              <span class="gato__anel" aria-hidden="true"></span>
+              <span class="gato__anel gato__anel--interno" aria-hidden="true"></span>
+              <div class="gato__avatar" role="img" aria-label="Ilustração do gato Nêutron">🐈</div>
+            </div>
+            <span class="gato__selo gato__selo--morador">Morador fixo</span>
+            <h2 class="gato__nome">
+              <span class="gato__jp">ニュートロン</span>
+              Nêutron
+            </h2>
+            <p class="gato__meta">Cinza rajado • 6 anos • Macho</p>
+            <p class="gato__texto">
+              O mais tranquilo da turma. Passa a tarde na poltrona perto da
+              janela acompanhando o movimento da rua com olhar de cientista.
+            </p>
+            <ul class="gato__tags">
+              <li class="gato__tag">Calmo</li>
+              <li class="gato__tag">Observador</li>
+            </ul>
+          </article>
+
+          <article class="gato" data-status="adocao">
+            <div class="gato__figura">
+              <span class="gato__anel" aria-hidden="true"></span>
+              <span class="gato__anel gato__anel--interno" aria-hidden="true"></span>
+              <div class="gato__avatar" role="img" aria-label="Ilustração da gata Sakura">😻</div>
+            </div>
+            <span class="gato__selo gato__selo--adocao">Para adoção</span>
+            <h2 class="gato__nome">
+              <span class="gato__jp">さくら</span>
+              Sakura
+            </h2>
+            <p class="gato__meta">Tricolor • 1 ano • Fêmea</p>
+            <p class="gato__texto">
+              Energia atômica em forma de gata. Persegue tampinhas, laser e
+              qualquer coisa que brilhe — mas dorme no colo no fim do dia.
+            </p>
+            <ul class="gato__tags">
+              <li class="gato__tag">Elétrica</li>
+              <li class="gato__tag">Carinhosa</li>
+              <li class="gato__tag">Filhote</li>
+            </ul>
+          </article>
+
+          <article class="gato" data-status="adocao">
+            <div class="gato__figura">
+              <span class="gato__anel" aria-hidden="true"></span>
+              <span class="gato__anel gato__anel--interno" aria-hidden="true"></span>
+              <div class="gato__avatar" role="img" aria-label="Ilustração do gato Fóton">😺</div>
+            </div>
+            <span class="gato__selo gato__selo--adocao">Para adoção</span>
+            <h2 class="gato__nome">
+              <span class="gato__jp">フォトン</span>
+              Fóton
+            </h2>
+            <p class="gato__meta">Laranja • 3 anos • Macho</p>
+            <p class="gato__texto">
+              Aparece na velocidade da luz sempre que a cozinha abre. Conversa
+              com os clientes em miados longos e nunca recusa um agrado.
+            </p>
+            <ul class="gato__tags">
+              <li class="gato__tag">Comilão</li>
+              <li class="gato__tag">Falante</li>
+            </ul>
+          </article>
+
+          <article class="gato" data-status="morador">
+            <div class="gato__figura">
+              <span class="gato__anel" aria-hidden="true"></span>
+              <span class="gato__anel gato__anel--interno" aria-hidden="true"></span>
+              <div class="gato__avatar" role="img" aria-label="Ilustração da gata Yuki">😽</div>
+            </div>
+            <span class="gato__selo gato__selo--morador">Moradora fixa</span>
+            <h2 class="gato__nome">
+              <span class="gato__jp">ゆき</span>
+              Yuki
+            </h2>
+            <p class="gato__meta">Branca • 5 anos • Fêmea</p>
+            <p class="gato__texto">
+              Discreta e elegante, escolhe a dedo quem merece um ronronado.
+              Se ela sentar do seu lado, considere isso uma medalha de honra.
+            </p>
+            <ul class="gato__tags">
+              <li class="gato__tag">Tímida</li>
+              <li class="gato__tag">Elegante</li>
+            </ul>
+          </article>
+
+        </div>
+
+        <p class="gatos__vazio" id="gatosVazio" role="status">
+          Nenhum gatinho nesta categoria no momento. 🐾
+        </p>
+
+        <!-- chamada final -->
+        <div class="gatos__cta">
+          <div>
+            <h2 class="gatos__cta-titulo">Quer levar um pra casa?</h2>
+            <p class="gatos__cta-texto">
+              A adoção é gratuita e feita com entrevista, termo de responsabilidade
+              e uma visita de apresentação aqui no café. Reserve uma mesa e venha
+              conhecer os candidatos pessoalmente.
+            </p>
+          </div>
+          <a href="index.html#contato" class="botao botao--primario">Falar sobre adoção</a>
+        </div>
+
+        <p class="gatos__voltar">
+          <a href="index.html" class="botao botao--secundario">← Voltar para a página inicial</a>
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
