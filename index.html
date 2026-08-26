@@ -45,9 +45,8 @@
           <li><a href="#inicio"   class="nav__link nav__link--ativo">Início</a></li>
           <li><a href="#sobre"    class="nav__link">Sobre nós</a></li>
           <li><a href="cardapio.html" class="nav__link">Cardápio</a></li>
-          <li><a href="gatos.html" class="nav__link">Nossos gatos</a></li>
+          <li><a href="gatos.html"    class="nav__link">Nossos gatos</a></li>
           <li><a href="#contato"  class="nav__link">Contato</a></li>
-          <li><a href="#contato"  class="nav__botao">Reservar mesa</a></li>
         </ul>
       </nav>
 
@@ -60,9 +59,12 @@
   <!-- ============================================================= -->
   <main>
     <section id="inicio" class="hero">
+      <div class="hero__mancha hero__mancha--rosa" aria-hidden="true"></div>
+      <div class="hero__mancha hero__mancha--verde" aria-hidden="true"></div>
+
       <div class="hero__container">
 
-        <div class="hero__texto">
+        <div class="hero__texto hero__texto--entra">
           <span class="hero__etiqueta">☕ Café temático • Era Atômica</span>
 
           <h1 class="hero__titulo">
@@ -76,8 +78,7 @@
           </p>
 
           <div class="hero__botoes">
-            <a href="#contato" class="botao botao--primario">Reservar mesa</a>
-            <a href="#cardapio" class="botao botao--secundario">Ver cardápio</a>
+            <a href="cardapio.html" class="botao botao--primario">Ver cardápio</a>
           </div>
 
           <ul class="hero__selos" aria-label="Destaques do café">
@@ -87,13 +88,73 @@
           </ul>
         </div>
 
-        <div class="hero__visual" aria-hidden="true">
+        <div class="hero__visual hero__visual--entra" aria-hidden="true">
           <div class="hero__anel hero__anel--verde"></div>
           <div class="hero__anel hero__anel--turquesa"></div>
+
+          <span class="hero__pata hero__pata--1">🐾</span>
+          <span class="hero__pata hero__pata--2">🐾</span>
+          <span class="hero__pata hero__pata--3">🐾</span>
+          <span class="hero__pata hero__pata--4">🐾</span>
+
           <div class="hero__cartao">
             <img src="img/logo.png.jpeg" alt="" class="hero__logo">
+            <svg class="hero__garras" viewBox="0 0 100 100">
+              <path d="M22,12 Q34,50 18,88" />
+              <path d="M42,8  Q54,50 38,92" />
+              <path d="M62,12 Q74,50 58,88" />
+            </svg>
           </div>
         </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!--  CAMADA 3 — SOBRE NÓS — Cassio                                -->
+    <!-- ============================================================= -->
+    <section id="sobre" class="sobre">
+      <svg class="sobre__onda" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,32 C 240,80 480,0 720,24 C 960,48 1200,72 1440,16 L1440,0 L0,0 Z"></path>
+      </svg>
+
+      <div class="sobre__container">
+
+        <div class="sobre__texto">
+          <span class="sobre__etiqueta">Nossa história</span>
+          <h2 class="sobre__titulo">Sobre o Atomic Cat Café</h2>
+
+          <p class="sobre__paragrafo">
+            Nascemos da mistura de dois mundos: o otimismo retrofuturista
+            da era atômica e a fofura dos cat cafés japoneses. Cada canto
+            do nosso salão combina tons pastel, formas arredondadas e um
+            carinho enorme pelos bichanos que vivem por aqui.
+          </p>
+
+          <p class="sobre__paragrafo">
+            Café torrado artesanalmente, doces feitos na casa e uma
+            equipe apaixonada por gatos resgatados: essa é a receita que
+            guia cada detalhe do Atomic Cat Café.
+          </p>
+        </div>
+
+        <ul class="sobre__cards">
+          <li class="sobre__card sobre__card--turquesa">
+            <span class="sobre__icone" aria-hidden="true">🐱</span>
+            <strong>Gatos resgatados</strong>
+            <p>Todos os nossos gatos vieram de adoção e vivem no café em tempo integral.</p>
+          </li>
+          <li class="sobre__card sobre__card--ouro">
+            <span class="sobre__icone" aria-hidden="true">☕</span>
+            <strong>Café artesanal</strong>
+            <p>Grãos selecionados e torra própria, preparados na hora.</p>
+          </li>
+          <li class="sobre__card sobre__card--verde">
+            <span class="sobre__icone" aria-hidden="true">⚛️</span>
+            <strong>Estética retrô</strong>
+            <p>Um salão inspirado na era atômica, com um toque de fofura japonesa.</p>
+          </li>
+        </ul>
 
       </div>
     </section>
