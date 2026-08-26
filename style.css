@@ -5,7 +5,8 @@
      0. Variáveis e reset ............ Cassio
      1. Header / menu ................ Cassio   <-- camada 1
      2. Main / hero .................. (camada 2)
-     3. Seções dos colegas ........... (colar no final)
+     3. Nossos gatos (gatos.html) .... Victor   <-- camada 3
+     4. Seções dos colegas ........... (colar no final)
    =================================================================== */
 
 
@@ -110,6 +111,8 @@ ul { list-style: none; }
   border-radius: 50%;
   border: 2.5px solid var(--rosa-claro);
   background: var(--branco);
+  object-fit: cover;
+  object-position: center;
   transition: transform .3s ease;
 }
 
@@ -431,4 +434,333 @@ ul { list-style: none; }
   .hero { padding: 48px 16px 72px; }
   .hero__botoes { flex-direction: column; align-items: stretch; }
   .botao { text-align: center; }
+}
+
+/* ===================================================================
+   3. NOSSOS GATOS — página gatos.html — Victor
+   =================================================================== */
+
+.gatos {
+  position: relative;
+  padding: 88px 24px 96px;
+  background: var(--rosa-nevoa);
+  border-top: 2px solid var(--rosa-claro);
+  border-bottom: 2px solid var(--rosa-claro);
+  overflow: hidden;
+}
+
+/* patinhas decorativas do fundo */
+.gatos::before,
+.gatos::after {
+  content: "🐾";
+  position: absolute;
+  font-size: 7rem;
+  opacity: .07;
+  pointer-events: none;
+}
+
+.gatos::before { top: 46px;    left: -14px;  transform: rotate(-18deg); }
+.gatos::after  { bottom: 28px; right: -14px; transform: rotate(14deg); }
+
+.gatos__container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--largura);
+  margin: 0 auto;
+}
+
+
+/* ---------- Cabeçalho da seção ---------- */
+
+.gatos__cabecalho {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.gatos__etiqueta {
+  display: inline-block;
+  padding: 6px 16px;
+  margin-bottom: 20px;
+  border-radius: var(--raio);
+  background: var(--branco);
+  border: 2px solid var(--rosa-claro);
+  color: var(--rosa-escuro);
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.gatos__titulo {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.gatos__titulo--destaque { color: var(--rosa); }
+
+.gatos__subtitulo {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.02rem;
+  color: var(--texto-suave);
+}
+
+
+/* ---------- Filtros ---------- */
+
+.gatos__filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 44px;
+}
+
+.filtro {
+  padding: 10px 22px;
+  border-radius: var(--raio);
+  border: 2px solid var(--rosa-claro);
+  background: var(--branco);
+  font-family: inherit;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  cursor: pointer;
+  transition: background .25s ease, border-color .25s ease, color .25s ease, transform .25s ease;
+}
+
+.filtro:hover {
+  border-color: var(--rosa);
+  color: var(--rosa-escuro);
+  transform: translateY(-2px);
+}
+
+.filtro--ativo {
+  background: var(--rosa);
+  border-color: var(--rosa);
+  color: var(--branco);
+  box-shadow: var(--sombra-rosa);
+}
+
+
+/* ---------- Grade de cartões ---------- */
+
+.gatos__grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.gato {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px 24px;
+  border-radius: 26px;
+  background: var(--branco);
+  border: 2px solid var(--rosa-claro);
+  text-align: center;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.gato:hover {
+  transform: translateY(-6px);
+  border-color: var(--rosa);
+  box-shadow: var(--sombra-rosa);
+}
+
+.gato--oculto { display: none; }
+
+
+/* ---------- Avatar com anéis atômicos ---------- */
+
+.gato__figura {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 136px;
+  height: 136px;
+  margin: 0 auto 18px;
+}
+
+.gato__anel {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px dashed var(--turquesa);
+  opacity: .6;
+  transition: transform .6s ease;
+}
+
+.gato__anel--interno {
+  inset: 14px;
+  border-style: dotted;
+  border-color: var(--verde);
+}
+
+.gato:hover .gato__anel           { transform: rotate(90deg); }
+.gato:hover .gato__anel--interno  { transform: rotate(-90deg); }
+
+.gato__avatar {
+  width: 94px;
+  height: 94px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--rosa-nevoa);
+  border: 4px solid var(--rosa-claro);
+  font-size: 2.6rem;
+  line-height: 1;
+  overflow: hidden;
+}
+
+/* caso troquem o emoji por foto real */
+img.gato__avatar,
+.gato__avatar img {
+  width: 94px;
+  height: 94px;
+  object-fit: cover;
+}
+
+
+/* ---------- Conteúdo do cartão ---------- */
+
+.gato__selo {
+  align-self: center;
+  padding: 5px 14px;
+  margin-bottom: 12px;
+  border-radius: var(--raio);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.gato__selo--adocao  { background: var(--verde); }
+.gato__selo--morador { background: var(--turquesa); }
+
+.gato__nome {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--navy);
+}
+
+.gato__jp {
+  display: block;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--rosa);
+  letter-spacing: .5px;
+}
+
+.gato__meta {
+  font-size: .84rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  margin-bottom: 12px;
+}
+
+.gato__texto {
+  font-size: .93rem;
+  color: var(--texto-suave);
+  margin-bottom: 18px;
+}
+
+.gato__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.gato__tag {
+  padding: 5px 12px;
+  border-radius: var(--raio);
+  background: var(--rosa-nevoa);
+  color: var(--rosa-escuro);
+  font-size: .78rem;
+  font-weight: 600;
+}
+
+
+/* ---------- Aviso de lista vazia ---------- */
+
+.gatos__vazio {
+  display: none;
+  padding: 40px 0 0;
+  text-align: center;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+.gatos__vazio--visivel { display: block; }
+
+
+/* ---------- Chamada final ---------- */
+
+.gatos__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 48px;
+  padding: 32px 30px;
+  border-radius: 26px;
+  background: var(--branco);
+  border: 2px dashed var(--rosa);
+}
+
+.gatos__cta-titulo {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.gatos__cta-texto {
+  max-width: 560px;
+  font-size: .95rem;
+  color: var(--texto-suave);
+}
+
+
+
+
+/* ---------- Voltar para a home ---------- */
+
+.gatos__voltar {
+  margin-top: 36px;
+  text-align: center;
+}
+
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 920px) {
+  .gatos { padding: 72px 24px 80px; }
+
+  .gatos__cta {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .gatos__cta-texto { margin: 0 auto; }
+}
+
+@media (max-width: 420px) {
+  .gatos { padding: 56px 16px 68px; }
+
+  .gatos__grade { gap: 20px; }
+
+  .filtro { padding: 9px 18px; font-size: .85rem; }
+
+  .gatos__cta { padding: 26px 20px; }
+  .gatos__cta .botao { width: 100%; text-align: center; }
 }
