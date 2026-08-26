@@ -348,7 +348,7 @@ img {
 .imagem-produto,
 .combo-imagem {
   position: relative;
-  background-image: url("assets/produtos-cardapio.png");
+  background-image: url("produtos-cardapio.png");
   background-repeat: no-repeat;
   background-size: 300% 300%;
 }
