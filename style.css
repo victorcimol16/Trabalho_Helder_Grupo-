@@ -173,26 +173,6 @@ ul { list-style: none; }
 .nav__link--ativo::after { width: 100%; }
 
 
-/* ---------- Botão "Reservar mesa" ---------- */
-
-.nav__botao {
-  display: inline-block;
-  padding: 11px 24px;
-  border-radius: var(--raio);
-  background: var(--rosa);
-  color: var(--branco);
-  font-size: .92rem;
-  font-weight: 700;
-  box-shadow: var(--sombra-rosa);
-  transition: background .25s ease, transform .25s ease;
-}
-
-.nav__botao:hover {
-  background: var(--rosa-escuro);
-  transform: translateY(-2px);
-}
-
-
 /* ---------- Botão hambúrguer ---------- */
 
 .hamburguer {
@@ -251,10 +231,9 @@ ul { list-style: none; }
   }
 
   .nav__lista li { border-bottom: 1px solid var(--rosa-nevoa); }
-  .nav__lista li:last-child { border: none; padding-top: 16px; }
+  .nav__lista li:last-child { border: none; }
 
   .nav__link { display: block; padding: 15px 0; }
-  .nav__botao { display: block; text-align: center; }
 }
 
 @media (max-width: 420px) {
