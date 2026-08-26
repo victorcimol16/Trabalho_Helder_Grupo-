@@ -1,3 +1,9 @@
+/* ===================================================================
+   ATOMIC CAT CAFE — cardapio.js
+   Filtros e contador de pedido da pagina "Cardapio" — Cassio/Sergio
+   O menu do header e do script.js, compartilhado pelas tres paginas.
+   =================================================================== */
+
 document.addEventListener("DOMContentLoaded", () => {
   const filtros = document.querySelectorAll(".filtro");
   const produtos = document.querySelectorAll(".card-produto");
@@ -7,8 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const rotuloItens = document.getElementById("rotulo-itens");
   const contador = document.querySelector(".contador-pedido");
   const aviso = document.getElementById("aviso");
-  const botaoMenu = document.querySelector(".botao-menu");
-  const navegacao = document.querySelector(".navegacao");
   let quantidade = 0;
   let temporizadorAviso;
 
@@ -26,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const categoriaEscolhida = filtro.dataset.categoria;
       let visiveis = 0;
 
-      filtros.forEach((item) => item.classList.remove("ativo"));
-      filtro.classList.add("ativo");
+      filtros.forEach((item) => item.classList.remove("filtro--ativo"));
+      filtro.classList.add("filtro--ativo");
 
       produtos.forEach((produto) => {
         const deveAparecer = categoriaEscolhida === "todos" || produto.dataset.categoria === categoriaEscolhida;
@@ -67,34 +71,5 @@ document.addEventListener("DOMContentLoaded", () => {
         aviso.classList.remove("visivel");
       }, 2400);
     });
-  });
-
-  const fecharMenu = () => {
-    navegacao.classList.remove("aberta");
-    botaoMenu.setAttribute("aria-expanded", "false");
-    botaoMenu.setAttribute("aria-label", "Abrir menu");
-    document.body.classList.remove("menu-aberto");
-  };
-
-  botaoMenu.addEventListener("click", () => {
-    const estaAberto = botaoMenu.getAttribute("aria-expanded") === "true";
-
-    if (estaAberto) {
-      fecharMenu();
-      return;
-    }
-
-    navegacao.classList.add("aberta");
-    botaoMenu.setAttribute("aria-expanded", "true");
-    botaoMenu.setAttribute("aria-label", "Fechar menu");
-    document.body.classList.add("menu-aberto");
-  });
-
-  navegacao.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", fecharMenu);
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 860) fecharMenu();
   });
 });

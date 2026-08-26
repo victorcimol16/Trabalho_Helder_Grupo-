@@ -74,41 +74,9 @@
 }
 
 
-/* ---------- Filtros ---------- */
+/* ---------- Filtros (componente do style.css) ---------- */
 
-.gatos__filtros {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 44px;
-}
-
-.filtro {
-  padding: 10px 22px;
-  border-radius: var(--raio);
-  border: 2px solid var(--rosa-claro);
-  background: var(--branco);
-  font-family: inherit;
-  font-size: .9rem;
-  font-weight: 600;
-  color: var(--texto-suave);
-  cursor: pointer;
-  transition: background .25s ease, border-color .25s ease, color .25s ease, transform .25s ease;
-}
-
-.filtro:hover {
-  border-color: var(--rosa);
-  color: var(--rosa-escuro);
-  transform: translateY(-2px);
-}
-
-.filtro--ativo {
-  background: var(--rosa);
-  border-color: var(--rosa);
-  color: var(--branco);
-  box-shadow: var(--sombra-rosa);
-}
+.gatos__filtros { margin-bottom: 44px; }
 
 
 /* ---------- Grade de cartões ---------- */
@@ -324,8 +292,6 @@ img.gato__avatar,
   .gatos { padding: 56px 16px 68px; }
 
   .gatos__grade { gap: 20px; }
-
-  .filtro { padding: 9px 18px; font-size: .85rem; }
 
   .gatos__cta { padding: 26px 20px; }
   .gatos__cta .botao { width: 100%; text-align: center; }
