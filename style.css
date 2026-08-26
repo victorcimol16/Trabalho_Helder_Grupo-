@@ -110,6 +110,8 @@ ul { list-style: none; }
   border-radius: 50%;
   border: 2.5px solid var(--rosa-claro);
   background: var(--branco);
+  object-fit: cover;
+  object-position: center;
   transition: transform .3s ease;
 }
 
