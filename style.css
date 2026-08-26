@@ -1,0 +1,434 @@
+/* ===================================================================
+   ATOMIC CAT CAFÉ — style.css
+   -------------------------------------------------------------------
+   ÍNDICE
+     0. Variáveis e reset ............ Cassio
+     1. Header / menu ................ Cassio   <-- camada 1
+     2. Main / hero .................. (camada 2)
+     3. Seções dos colegas ........... (colar no final)
+   =================================================================== */
+
+
+/* ===================================================================
+   0. VARIÁVEIS E RESET
+   =================================================================== */
+
+:root {
+  /* rosas — cores principais da marca */
+  --rosa:         #FF8AC0;
+  --rosa-escuro:  #E85F9E;
+  --rosa-claro:   #FFC7D9;
+  --rosa-nevoa:   #FFF2F7;
+
+  /* apoio */
+  --navy:         #16294B;
+  --creme:        #FBF7F1;
+  --branco:       #FFFFFF;
+
+  /* acentos (usar com moderação) */
+  --verde:        #D4E164;
+  --turquesa:     #51CCC1;
+  --ouro:         #BF801E;
+
+  /* texto */
+  --texto:        #16294B;
+  --texto-suave:  #6E6478;
+
+  /* medidas */
+  --largura:      1140px;
+  --raio:         999px;
+  --sombra-rosa:  0 8px 24px rgba(255, 138, 192, .28);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: var(--texto);
+  background: var(--creme);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+a { text-decoration: none; color: inherit; }
+
+ul { list-style: none; }
+
+
+/* ===================================================================
+   1. HEADER / MENU
+   =================================================================== */
+
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, .93);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--rosa-claro);
+  box-shadow: 0 4px 20px rgba(255, 138, 192, .12);
+}
+
+/* faixinha colorida bem no topo */
+.cabecalho__faixa {
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--rosa) 0%,
+    var(--rosa-claro) 30%,
+    var(--rosa) 55%,
+    var(--turquesa) 78%,
+    var(--verde) 100%
+  );
+}
+
+.cabecalho__container {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+
+/* ---------- Logo ---------- */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo__img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 2.5px solid var(--rosa-claro);
+  background: var(--branco);
+  transition: transform .3s ease;
+}
+
+.logo:hover .logo__img { transform: rotate(-8deg) scale(1.06); }
+
+.logo__texto {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.logo__jp {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--rosa);
+  letter-spacing: .5px;
+}
+
+.logo__nome {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+
+/* ---------- Navegação ---------- */
+
+.nav__lista {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav__link {
+  position: relative;
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  padding: 6px 0;
+  transition: color .25s ease;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--rosa);
+  transition: width .25s ease;
+}
+
+.nav__link:hover,
+.nav__link--ativo { color: var(--rosa-escuro); }
+
+.nav__link:hover::after,
+.nav__link--ativo::after { width: 100%; }
+
+
+/* ---------- Botão "Reservar mesa" ---------- */
+
+.nav__botao {
+  display: inline-block;
+  padding: 11px 24px;
+  border-radius: var(--raio);
+  background: var(--rosa);
+  color: var(--branco);
+  font-size: .92rem;
+  font-weight: 700;
+  box-shadow: var(--sombra-rosa);
+  transition: background .25s ease, transform .25s ease;
+}
+
+.nav__botao:hover {
+  background: var(--rosa-escuro);
+  transform: translateY(-2px);
+}
+
+
+/* ---------- Botão hambúrguer ---------- */
+
+.hamburguer {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 14px;
+  background: var(--rosa-nevoa);
+  cursor: pointer;
+}
+
+.hamburguer span {
+  display: block;
+  width: 22px;
+  height: 3px;
+  margin: 0 auto;
+  border-radius: 3px;
+  background: var(--rosa-escuro);
+  transition: transform .28s ease, opacity .2s ease;
+}
+
+.hamburguer--aberto span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburguer--aberto span:nth-child(2) { opacity: 0; }
+.hamburguer--aberto span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 920px) {
+
+  .hamburguer { display: flex; }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--branco);
+    border-bottom: 2px solid var(--rosa-claro);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+  }
+
+  .nav--aberto { max-height: 420px; }
+
+  .nav__lista {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 24px 22px;
+  }
+
+  .nav__lista li { border-bottom: 1px solid var(--rosa-nevoa); }
+  .nav__lista li:last-child { border: none; padding-top: 16px; }
+
+  .nav__link { display: block; padding: 15px 0; }
+  .nav__botao { display: block; text-align: center; }
+}
+
+@media (max-width: 420px) {
+  .cabecalho__container { padding: 10px 16px; }
+  .logo__img { width: 48px; height: 48px; }
+  .logo__nome { font-size: 1.05rem; }
+  .logo__jp { font-size: .68rem; }
+}
+
+
+/* ===================================================================
+   2. MAIN / HERO — Cassio
+   =================================================================== */
+
+.hero {
+  padding: 64px 24px 96px;
+}
+
+.hero__container {
+  max-width: var(--largura);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 48px;
+}
+
+
+/* ---------- Texto ---------- */
+
+.hero__etiqueta {
+  display: inline-block;
+  padding: 6px 16px;
+  margin-bottom: 20px;
+  border-radius: var(--raio);
+  background: var(--rosa-nevoa);
+  color: var(--rosa-escuro);
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.hero__titulo {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.hero__titulo--destaque { color: var(--rosa); }
+
+.hero__subtitulo {
+  max-width: 480px;
+  font-size: 1.05rem;
+  color: var(--texto-suave);
+  margin-bottom: 32px;
+}
+
+.hero__botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.botao {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: var(--raio);
+  font-size: .98rem;
+  font-weight: 700;
+  transition: background .25s ease, transform .25s ease, border-color .25s ease, color .25s ease;
+}
+
+.botao--primario {
+  background: var(--rosa);
+  color: var(--branco);
+  box-shadow: var(--sombra-rosa);
+}
+
+.botao--primario:hover {
+  background: var(--rosa-escuro);
+  transform: translateY(-2px);
+}
+
+.botao--secundario {
+  background: transparent;
+  color: var(--navy);
+  border: 2px solid var(--rosa-claro);
+}
+
+.botao--secundario:hover {
+  border-color: var(--rosa);
+  color: var(--rosa-escuro);
+}
+
+.hero__selos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+}
+
+.hero__selos li {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+
+/* ---------- Visual (logo + anéis atômicos) ---------- */
+
+.hero__visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 340px;
+}
+
+.hero__anel {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px dashed;
+  opacity: .55;
+}
+
+.hero__anel--verde     { width: 300px; height: 300px; border-color: var(--verde); }
+.hero__anel--turquesa  { width: 220px; height: 220px; border-color: var(--turquesa); }
+
+.hero__cartao {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--branco);
+  border: 4px solid var(--rosa-claro);
+  box-shadow: var(--sombra-rosa);
+}
+
+.hero__logo {
+  width: 78%;
+  height: 78%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 920px) {
+  .hero__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero__subtitulo { margin-left: auto; margin-right: auto; }
+
+  .hero__botoes,
+  .hero__selos { justify-content: center; }
+
+  .hero__visual {
+    order: -1;
+    min-height: 260px;
+  }
+
+  .hero__anel--verde    { width: 220px; height: 220px; }
+  .hero__anel--turquesa { width: 160px; height: 160px; }
+  .hero__cartao         { width: 150px; height: 150px; }
+}
+
+@media (max-width: 420px) {
+  .hero { padding: 48px 16px 72px; }
+  .hero__botoes { flex-direction: column; align-items: stretch; }
+  .botao { text-align: center; }
+}
