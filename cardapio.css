@@ -797,6 +797,8 @@ img {
   .combo-texto h2 {
     font-size: 32px;
   }
+  
+/*comentario*/
 
   .filtros {
     flex-wrap: nowrap;
