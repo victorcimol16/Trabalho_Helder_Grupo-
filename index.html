@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atomic Cat Café — アトミック猫カフェ</title>
+  <meta name="description" content="Atomic Cat Café: cat café temático com café artesanal, doces fofos e muitos gatos.">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <header class="cabecalho" id="topo">
+
+    <!-- faixinha decorativa do topo -->
+    <div class="cabecalho__faixa" aria-hidden="true"></div>
+
+    <div class="cabecalho__container">
+
+      <!-- logo -->
+      <a href="#inicio" class="logo">
+        <img src="img/logo.png.jpeg" alt="Logotipo do Atomic Cat Café" class="logo__img">
+        <span class="logo__texto">
+          <span class="logo__jp">アトミック猫カフェ</span>
+          <span class="logo__nome">Atomic Cat Café</span>
+        </span>
+      </a>
+
+      <!-- botão do menu (aparece só no celular) -->
+      <button class="hamburguer" id="btnMenu" type="button"
+              aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- navegação -->
+      <nav class="nav" id="menu" aria-label="Menu principal">
+        <ul class="nav__lista">
+          <li><a href="#inicio"   class="nav__link nav__link--ativo">Início</a></li>
+          <li><a href="#sobre"    class="nav__link">Sobre nós</a></li>
+          <li><a href="#cardapio" class="nav__link">Cardápio</a></li>
+          <li><a href="#gatos"    class="nav__link">Nossos gatos</a></li>
+          <li><a href="#contato"  class="nav__link">Contato</a></li>
+          <li><a href="#contato"  class="nav__botao">Reservar mesa</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ============================================================= -->
+  <!--  CAMADA 2 — MAIN / HERO — Cassio                              -->
+  <!-- ============================================================= -->
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero__container">
+
+        <div class="hero__texto">
+          <span class="hero__etiqueta">☕ Café temático • Era Atômica</span>
+
+          <h1 class="hero__titulo">
+            Onde o átomo <span class="hero__titulo--destaque">ronrona</span>
+          </h1>
+
+          <p class="hero__subtitulo">
+            Café artesanal, doces fofos e muitos gatos num salão
+            retrofuturista inspirado na era atômica, com um toque de
+            fofura japonesa.
+          </p>
+
+          <div class="hero__botoes">
+            <a href="#contato" class="botao botao--primario">Reservar mesa</a>
+            <a href="#cardapio" class="botao botao--secundario">Ver cardápio</a>
+          </div>
+
+          <ul class="hero__selos" aria-label="Destaques do café">
+            <li>🐾 Gatos resgatados</li>
+            <li>🍰 Doces artesanais</li>
+            <li>⚛️ Ambiente temático</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__anel hero__anel--verde"></div>
+          <div class="hero__anel hero__anel--turquesa"></div>
+          <div class="hero__cartao">
+            <img src="img/logo.png.jpeg" alt="" class="hero__logo">
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
