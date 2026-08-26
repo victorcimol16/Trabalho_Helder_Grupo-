@@ -1,3 +1,16 @@
+# ☕🐾 Café Gatos Fofos
+
+Um projeto de site acolhedor e charmoso dedicado a um café temático de felinos, onde amantes de gatos e de um bom café podem se encontrar e relaxar.
+
+## 🚀 Visão Geral
+
+Este projeto foi desenvolvido com foco em criar uma interface web limpa, acessível e bem estruturada. O site apresenta o cardápio de cafés e doces, uma galeria apresentando os gatinhos residentes para adoção/interação, e informações de contato e localização.
+
+## 🛠️ Tecnologias Utilizadas
+
+*   **HTML5 Semântico:** Estruturação avançada utilizando boas práticas e código limpo (clean code).
+*   **CSS3:** Estilização responsiva, animações suaves e design focado na experiência do usuário.
+*   **Git e GitHub:** Controle de versão e hospedagem do repositório.
 
 ## ⚙️ Como Executar o Projeto
 
